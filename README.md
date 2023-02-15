@@ -8,7 +8,7 @@ As an example of how to use each mode, I use the decremental mode for studying, 
 # How To Use
 Place text files in the same directory as the program. Each line should be formatted with ' !! ' between the questions and their corresponding answers. Any line containing '//' will be considered a "comment line" and will not show up in the questions and answers loaded into the program. Blank lines are skipped.
 
-**Note:** The comment character and Q/A delimiter (the thing separating the questions and answers on each line) are defined in Studybot.h if you wish to change them).
+**Note:** The comment character and Q/A delimiter (the thing separating the questions and answers on each line) are defined in Studybot.h if you wish to change them.
 
 ## Example:
 **Filename:** *example.txt*
