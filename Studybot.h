@@ -5,7 +5,8 @@
 // Personal Project
 // Header file for Studybot
 
-#pragma once
+#ifndef FILE_Studybot_H_INCLUDED
+#define FILE_Studybot_H_INCLUDED
 
 /* INCLUDES */
 #include <iostream> // For cout, cin, endl
@@ -172,3 +173,4 @@ private:
 	int getIntFromUser();
 };
 
+#endif // #ifndef FILE_Studybot_H_INCLUDED
