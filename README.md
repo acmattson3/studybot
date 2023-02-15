@@ -21,12 +21,15 @@ This is also a comment line! //
 
 This is /// also a comment line!
 What is the meaning of life? 
+2 + 2 = ? !! 2 + 2 = 4
 ```
 **From this file, the following questions and answers will be loaded:**
 
 1. **Q.** What is the answer? **A.** This is the answer!
 
 2. **Q.** What is the meaning of life? **A.** No answer provided.
+
+3. **Q.** 2 + 2 = ? **A.** 2 + 2 = 4
 
 ## Lore..?
 I originally wrote this program *very* poorly in Python a couple years ago. This year, I needed to study in a flashcard-like style, preferably without the writing. When I tried using my old studybot, the thing was an *absolute mess* of bugs and crashes. As a result, I chose to rewrite the program as professionally as possible to best avoid bugs. I chose to rewrite it in C++ to make things as explicit as possible so I can change things in the future.
