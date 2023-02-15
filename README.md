@@ -1,5 +1,5 @@
 # studybot
-A program that, given any text (.txt) file in its current directory (and preferably in the defined format), will read each line as a question and its (optional) corresponding answer. If the program's current directory has multiple text files, you will be prompted to choose one. After that, the program lets you "study" the questions and answers in one of two ways:
+This is a program that, given any text (.txt) file in its current directory (and preferably in the defined format), will read each line as a question and its (optional) corresponding answer. If the program's current directory has multiple text files, you will be prompted to choose one. After that, the program lets you "study" the questions and answers in one of two ways:
 1. Decremental Mode - Start with every question, and remove questions when you're comfortable with them (traditional flashcard style).
 2. Incremental Mode - Start with one question, and add them as you feel comfortable with the ones you have.
 
@@ -26,3 +26,6 @@ What is the meaning of life?
 1. **Q.** What is the answer? **A.** This is the answer!
 
 2. **Q.** What is the meaning of life? **A.** No answer provided.
+
+## Lore..?
+I originally wrote this program very poorly in Python a couple years ago. This year, I needed to study in a flashcard-like style, preferably without the writing. When I tried using my old studybot, the thing was an *absolute mess* of bugs and crashes. As a result, I chose to rewrite the program as professionally as I know how. I chose to rewrite it in C++ to make things as explicit as possible. 
