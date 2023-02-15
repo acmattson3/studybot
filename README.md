@@ -28,4 +28,4 @@ What is the meaning of life?
 2. **Q.** What is the meaning of life? **A.** No answer provided.
 
 ## Lore..?
-I originally wrote this program very poorly in Python a couple years ago. This year, I needed to study in a flashcard-like style, preferably without the writing. When I tried using my old studybot, the thing was an *absolute mess* of bugs and crashes. As a result, I chose to rewrite the program as professionally as I know how. I chose to rewrite it in C++ to make things as explicit as possible. 
+I originally wrote this program *very* poorly in Python a couple years ago. This year, I needed to study in a flashcard-like style, preferably without the writing. When I tried using my old studybot, the thing was an *absolute mess* of bugs and crashes. As a result, I chose to rewrite the program as professionally as I know how. I chose to rewrite it in C++ to make things as explicit as possible. 
