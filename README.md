@@ -1,5 +1,5 @@
 # studybot
-A program that, given any txt file in its current directory (and preferably in the defined format), will read each line as a question and its corresponding answer. The program lets you "study" the questions and answers in one of two ways:
+A program that, given any text (.txt) file in its current directory (and preferably in the defined format), will read each line as a question and its corresponding answer. The program lets you "study" the questions and answers in one of two ways:
 1. Decremental Mode - Start with every question, and remove questions when you're comfortable with them (traditional flashcard style).
 2. Incremental Mode - Start with one question, and add them as you feel comfortable with the ones you have.
 
