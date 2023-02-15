@@ -12,6 +12,8 @@ Place text files in the same directory as the program. Each line should be forma
 
 ## Example:
 **Filename:** *example.txt*
+
+**Contents:**
 ```
 What is the answer? !! This is the answer!
 // This is a comment line!
