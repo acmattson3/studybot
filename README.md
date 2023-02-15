@@ -1,7 +1,7 @@
 # studybot
 This is a program that, given any text (.txt) file in its current directory (and preferably in the defined format), will read each line as a question and its (optional) corresponding answer. If the program's current directory has multiple text files, you will be prompted to choose one. After that, the program lets you "study" the questions and answers in one of two ways:
-1. Decremental Mode - Start with every question, and remove questions when you're comfortable with them (traditional flashcard style).
-2. Incremental Mode - Start with one question, and add them as you feel comfortable with the ones you have.
+1. **Decremental Mode** - Start with every question, and remove questions when you're comfortable with them (traditional flashcard style).
+2. **Incremental Mode** - Start with one question, and add them as you feel comfortable with the ones you have.
 
 As an example of how to use each mode, I use the decremental mode for studying, as the format is like that of flashcards. I use the incremental mode when learning new things, as the format is like that of most traditional academic classes (start with chapter one, then add chapter two, etc).
 
