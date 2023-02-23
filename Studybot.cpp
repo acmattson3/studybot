@@ -46,8 +46,11 @@ void Studybot::setMats(string filename) {
 	ifstream file(filename);
 	string line;
 	while (std::getline(file, line)) { // For every line in file
+		if (line.length() > 0 && isSubstr(COMMENT, line)) {
+			int commentPos = line.find(COMMENT);
+			line = line.substr(0, commentPos);
+		}
 		if (line.length() > 0) { // Remove empty lines
-			if (isSubstr(COMMENT, line)) continue;
 			if (isSubstr(DELIM, line)) { // If answer given
 				int delimPos = line.find(DELIM);
 				string question = line.substr(0, delimPos);
@@ -241,6 +244,8 @@ int Studybot::getIntFromUser() {
 	ss.clear();
 	ss.str("");
 	input.clear();
+
+	return -1;
 }
 
 string Studybot::getFilename() {
@@ -253,6 +258,7 @@ string Studybot::getFilename() {
 			}
 		}
 	}
+	return "";
 }
 
 void Studybot::clearScr()
