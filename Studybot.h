@@ -171,6 +171,6 @@ private:
 	// Preconditions: None
 	// No-Throw Guarantee
 	int getIntFromUser();
-};
+}; // End of class Studybot
 
 #endif // #ifndef FILE_Studybot_H_INCLUDED
