@@ -26,7 +26,7 @@ class Flashcard {
 /*** PUBLIC MEMBER VARIABLES ***/
 public:
 	string q; // Question
-	string a="No answer provided"; // Answer
+	string a; // Answer
 	bool isAnswered; // Whether or not the card is being studied.
 	
 /*** CTORS ***/
