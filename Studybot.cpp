@@ -41,7 +41,6 @@ void Studybot::newChoice() {
 
 void Studybot::setMats(string filename) {
 	mats.clear();
-	//answered.clear();
 
 	ifstream file(filename);
 	string line;
@@ -71,9 +70,6 @@ void Studybot::setMats(string filename) {
 	else {
 		_validMats = true;
 		_hasMats = true;
-		//for (int i = 0; i < mats.size(); i++) {
-		//	answered.push_back(0);
-		//}
 	}
 }
 
@@ -86,9 +82,7 @@ bool Studybot::studyInc() {
 	int remQS = mats.size() - 1;
 	string decision;
 	while (remQS >= 0) {
-		// if (currQS <= answered.size()) // Maybe redundant
-	    //answered[currQS - 1] = 1; // Start studying first Q
-		mats[currQS - 1].isAnswered = 1;
+		mats[currQS - 1].isAnswered = true;
 
 		int randIdx = -1;
 		// Of Q's added, study random one.
@@ -112,7 +106,7 @@ bool Studybot::studyInc() {
 	}
 
 	for (int i = 0; i < mats.size(); i++) {
-		mats[i].isAnswered = 0;
+		mats[i].isAnswered = false;
 	}
 
 	clearScr();
@@ -132,7 +126,7 @@ bool Studybot::studyDec() {
 	string decision;
 	while (remQS >= 0) {
 		int randIdx = -1;
-		while ((randIdx < 0) || (mats[randIdx].isAnswered == 1 || prevIdx == randIdx)) {
+		while ((randIdx < 0) || (mats[randIdx].isAnswered == true || prevIdx == randIdx)) {
 			if (remQS == 0) {
 				randIdx = 0;
 				break;
@@ -144,15 +138,11 @@ bool Studybot::studyDec() {
 
 		decision = dispQandA(randIdx, remQS, true);
 		if (decision == "") {
-			mats[randIdx].isAnswered = 1;
+			mats[randIdx].isAnswered = true;
 			remQS--;
 		}
 		else if (decision == "stop") break;
 	}
-
-	//for (int i = 0; i < mats.size(); i++) {
-	//	answered[i] = 0;
-	//}
 
 	clearScr();
 
