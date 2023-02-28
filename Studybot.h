@@ -1,6 +1,6 @@
 // Studybot.h  
 // Andrew C. Mattson
-// 2023-02-13
+// 2023-02-27
 //
 // Personal Project
 // Header file for Studybot
@@ -8,7 +8,7 @@
 #ifndef FILE_Studybot_H_INCLUDED
 #define FILE_Studybot_H_INCLUDED
 
-/* INCLUDES */
+/*** INCLUDES ***/
 #include <iostream> // For cout, cin, endl
 using std::cout;
 using std::endl;
