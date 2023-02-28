@@ -20,7 +20,7 @@ class Flashcard {
 public:
 	string q; // Question
 	string a="No answer provided"; // Answer
-	bool isAnswered; // Whether or not the card in in the "pile"
+	bool isAnswered; // Whether or not the card is being studied.
 	
 /*** CTORS ***/
 public:
