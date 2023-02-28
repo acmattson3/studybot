@@ -41,7 +41,7 @@ void Studybot::newChoice() {
 
 void Studybot::setMats(string filename) {
 	mats.clear();
-	answered.clear();
+	//answered.clear();
 
 	ifstream file(filename);
 	string line;
@@ -55,10 +55,10 @@ void Studybot::setMats(string filename) {
 				int delimPos = line.find(DELIM);
 				string question = line.substr(0, delimPos);
 				string answer = line.substr(delimPos + DELIM_LEN, line.length() - (delimPos + DELIM_LEN));
-				mats.push_back(pair<string, string>(question, answer));
+				mats.push_back(Flashcard(question, answer));
 			}
 			else { // If no answer given
-				mats.push_back(pair<string, string>(line, "No answer provided."));
+				mats.push_back(Flashcard(line));
 			}
 		}
 	}
@@ -71,9 +71,9 @@ void Studybot::setMats(string filename) {
 	else {
 		_validMats = true;
 		_hasMats = true;
-		for (int i = 0; i < mats.size(); i++) {
-			answered.push_back(0);
-		}
+		//for (int i = 0; i < mats.size(); i++) {
+		//	answered.push_back(0);
+		//}
 	}
 }
 
@@ -86,8 +86,9 @@ bool Studybot::studyInc() {
 	int remQS = mats.size() - 1;
 	string decision;
 	while (remQS >= 0) {
-		if (currQS <= answered.size()) // Maybe redundant
-			answered[currQS - 1] = 1; // Start studying first Q
+		// if (currQS <= answered.size()) // Maybe redundant
+	    //answered[currQS - 1] = 1; // Start studying first Q
+		mats[currQS - 1].isAnswered = 1;
 
 		int randIdx = -1;
 		// Of Q's added, study random one.
@@ -111,7 +112,7 @@ bool Studybot::studyInc() {
 	}
 
 	for (int i = 0; i < mats.size(); i++) {
-		answered[i] = 0;
+		mats[i].isAnswered = 0;
 	}
 
 	clearScr();
@@ -131,7 +132,7 @@ bool Studybot::studyDec() {
 	string decision;
 	while (remQS >= 0) {
 		int randIdx = -1;
-		while ((randIdx < 0) || (answered[randIdx] == 1 || prevIdx == randIdx)) {
+		while ((randIdx < 0) || (mats[randIdx].isAnswered == 1 || prevIdx == randIdx)) {
 			if (remQS == 0) {
 				randIdx = 0;
 				break;
@@ -143,15 +144,15 @@ bool Studybot::studyDec() {
 
 		decision = dispQandA(randIdx, remQS, true);
 		if (decision == "") {
-			answered[randIdx] = 1;
+			mats[randIdx].isAnswered = 1;
 			remQS--;
 		}
 		else if (decision == "stop") break;
 	}
 
-	for (int i = 0; i < mats.size(); i++) {
-		answered[i] = 0;
-	}
+	//for (int i = 0; i < mats.size(); i++) {
+	//	answered[i] = 0;
+	//}
 
 	clearScr();
 
@@ -169,15 +170,15 @@ int Studybot::randInRange(int min, int max) {
 string Studybot::dispQandA(int idx, int rem, bool isDec) {
 	clearScr();
 	cout << "Remaining questions: " << rem << endl << endl;
-	cout << "Q. " << mats[idx].first << endl;
+	cout << "Q. " << mats[idx].q << endl;
 
 	cout << "A. ";
 	waitForKeypress();
 
 	clearScr();
 	cout << "Remaining questions: " << rem << endl << endl;
-	cout << "Q. " << mats[idx].first << endl;
-	cout << "A. " << mats[idx].second << endl << endl;
+	cout << "Q. " << mats[idx].q << endl;
+	cout << "A. " << mats[idx].a << endl << endl;
 
 	if (isDec) // Change to passing const &string to print if adding more study modes
 		cout << "Did you get it right? (Press enter if yes, enter 'n' if no, 'stop' to stop): ";
@@ -192,8 +193,8 @@ string Studybot::dispQandA(int idx, int rem, bool isDec) {
 void Studybot::printAllQandA() {
 	if (!_validMats) return;
 
-	for (const pair<string, string>& elem : mats) {
-		cout << "Q. " << elem.first << endl << "A. " << elem.second << endl << endl;
+	for (const Flashcard& elem : mats) {
+		cout << "Q. " << elem.q << endl << "A. " << elem.a << endl << endl;
 	}
 }
 

@@ -35,6 +35,8 @@ using std::system;
 #include <sstream> // For stringstream
 using std::stringstream;
 
+#include "Flashcard.h" // For class Flashcard
+
 
 /*** CONSTANTS ***/
 static const int DELIM_LEN = 4;
@@ -68,11 +70,12 @@ public:
 	// Directory iterator type (not random-access)
 	typedef fs::directory_iterator dir_iter;
 
-/*** PRIVATE MEMBER VARIABLES ***/
+/*** PRIVATE MEMBER VARIABLES ***/ 	
 private: 
 	int choiceIdx; // User's chosen file from the list
-	vector<pair<string, string>> mats;
-	vector<int> answered;
+	//vector<pair<string, string>> mats; // Old mats vector
+	vector<Flashcard> mats;
+	//vector<int> answered; // Old answered vector
 	bool _validMats;
 	bool _hasMats;
 
