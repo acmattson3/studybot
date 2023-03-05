@@ -73,9 +73,7 @@ public:
 /*** PRIVATE MEMBER VARIABLES ***/ 	
 private: 
 	int choiceIdx; // User's chosen file from the list
-	//vector<pair<string, string>> mats; // Old mats vector
 	vector<Flashcard> mats;
-	//vector<int> answered; // Old answered vector
 	bool _validMats;
 	bool _hasMats;
 
