@@ -34,3 +34,10 @@ What is the meaning of life?
 
 ## Lore..?
 I originally wrote this program *very* poorly in Python a couple years ago. This year, I needed to study in a flashcard-like style, preferably without the writing. When I tried using my old studybot, the thing was an *absolute mess* of bugs and crashes. As a result, I chose to rewrite the program as professionally as possible to best avoid bugs. I chose to rewrite it in C++ to make things as explicit as possible so I can change things in the future.
+
+## Future Goals
+* Make a question "marking" feature so that, as you study, you can mark questions
+  * The questions would be displayed at the very end either when you finish all materials or stop studying. 
+  * Useful for marking questions with typos to be fixed later, or for remembering which questions to write down/work on later.
+* Make a saving feature that saves remaining questions to be studied later.
+  * Possible implementation: When the user enters "stop," ask them if they want to save. If they do, create a new txt file called "filename_save" where filename is the name of the text file being studied. For the decremental mode, enter the current remaining questions into this new txt file. When the save file is done being studied, the file is deleted.
