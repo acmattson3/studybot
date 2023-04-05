@@ -24,6 +24,7 @@ Studybot::Studybot() : choiceIdx(1) {
 		cout << endl << fs::current_path() << endl;
 		_validMats = false;
 		_hasMats = false;
+		waitForKeypress();
 	}
 }
 
@@ -271,7 +272,11 @@ bool Studybot::hasMats()
 void Studybot::waitForKeypress()
 {
 	cout.flush();
-	system(WAITCMD);
+	//system(WAITCMD); // The old way to wait for user (system dependent)
+	cout << "Press enter to continue...";
+	string line;
+	std::getline(cin, line);
+	cout.flush();
 }
 
 bool Studybot::isSubstr(const string& sub, const string& str) {

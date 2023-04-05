@@ -46,10 +46,10 @@ static const string COMMENT = "//"; // Indicator for a full-line comment
 
 #if ( defined(WIN32) || defined(_WIN32) || defined(__WIN32) ) && !defined(__CYGWIN__)
 static const char* CLEARCMD = "cls";
-static const char* WAITCMD = "pause";
+static const char* WAITCMD = "pause"; // Not used.
 #else
 static const char* CLEARCMD = "clear";
-static const char* WAITCMD = "read";
+static const char* WAITCMD = "read -rsn1 -p \"Press any key to continue\" variable;echo"; // Not used.
 #endif
 
 
@@ -84,6 +84,7 @@ public:
 	// Preconditions: None
 	// Strong Guarantee
 	Studybot();
+
 
 /*** PUBLIC MEMBER FUNCTIONS ***/
 public: 
@@ -126,6 +127,11 @@ public:
 	// Preconditions: None
 	// No-Throw Guarantee
 	bool hasMats();
+	
+	// Waits for a user to press any key. Just a wrapper around system(WAITCMD).
+	// Preconditions: None
+	// No-Throw Guarantee
+	void waitForKeypress();
 
 /*** PRIVATE MEMBER FUNCTIONS ***/
 private: 
@@ -162,11 +168,6 @@ private:
 	// Preconditions: None
 	// No-Throw Guarantee
 	bool isSubstr(const string& sub, const string& str);
-
-	// Waits for a user to press any key. Just a wrapper around system(WAITCMD).
-	// Preconditions: None
-	// No-Throw Guarantee
-	void waitForKeypress();
 
 	// Requests an integer from the user. Returns -1 given invalid input.
 	// Preconditions: None
