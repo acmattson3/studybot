@@ -10,7 +10,7 @@ Place text files in the same directory as the program. Each line should be forma
 
 **Note:** The comment character and Q/A delimiter (the thing separating the questions and answers on each line) are defined in Studybot.h if you wish to change them.
 
-To run the program, compile with your favorite compiler (For example, using g++: ```g++ Studybot.h Studybot.cpp Studybot_main.cpp Flashcard.h -o myStudybot.exe```), and get your study on! My code will (hopefully) work on Windows, Mac, and Linux (if you run into problems, please submit a detailed issue report).
+To run the program, compile with your favorite compiler (For example, using g++: ```g++ Studybot.h Studybot.cpp Studybot_main.cpp Flashcard.h -o myStudybot.exe```), and get your study on! My code should work on Windows, Mac, and Linux (if you run into problems, please submit a detailed issue report).
 
 ## Example:
 **Filename:** *example.txt*
