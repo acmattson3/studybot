@@ -34,7 +34,7 @@ void Studybot::newChoice() {
 	int maxChoices = printFiles();
 	if (maxChoices > 1) getChoice(1, maxChoices);
 	else if (maxChoices == 1) {
-		cout << "Only one file choice available (you get to study that one)" << endl;
+		cout << "Only one file choice available (you can only study that one)" << endl;
 		waitForKeypress();
 	}
 	setMats(getFilename());
@@ -46,11 +46,11 @@ void Studybot::setMats(string filename) {
 	ifstream file(filename);
 	string line;
 	while (std::getline(file, line)) { // For every line in file
-		if (line.length() > 0 && isSubstr(COMMENT, line)) {
+		if (line.length() > 1 && isSubstr(COMMENT, line)) {
 			int commentPos = line.find(COMMENT);
 			line = line.substr(0, commentPos);
 		}
-		if (line.length() > 0) { // Remove empty lines
+		if (line.length() > 1) { // Remove empty lines
 			if (isSubstr(DELIM, line)) { // If answer given
 				int delimPos = line.find(DELIM);
 				string question = line.substr(0, delimPos);
