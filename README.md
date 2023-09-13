@@ -8,10 +8,6 @@ As an example of how to use each mode, I use the decremental mode for studying, 
 # How To Use
 Place text files in the same directory as the program. Each line should be formatted with ' !! ' between the questions and their corresponding answers. Any text on a line following a '//' will be excluded from the line (works as a traditional C++ comment). Blank lines are skipped.
 
-**Note:** The comment character and Q/A delimiter (the thing separating the questions and answers on each line) are defined in Studybot.h if you wish to change them.
-
-To run the program, compile with your favorite compiler (For example, using g++: ```g++ Studybot.h Studybot.cpp Studybot_main.cpp Flashcard.h -o myStudybot.exe```), and get your study on! My code should work on Windows, Mac, and Linux (if you run into problems, please submit a detailed issue report).
-
 ## Example:
 **Filename:** *example.txt*
 
@@ -31,6 +27,15 @@ What is the meaning of life?
 2. **Q.** What is the meaning of life? **A.** No answer provided.
 
 3. **Q.** 2 + 2 = ? **A.** 2 + 2 = 4
+
+**Note:** The comment character and Q/A delimiter (the thing separating the questions and answers on each line) are defined in Studybot.h if you wish to change them.
+
+## Compilation:
+The best way to compile studybot is using the included makefile. Simply run the "make" command in the terminal and execute the resulting file (the prompt resulting from the make command will tell you the filename). For Windows users, this assumes you have make installed on your system, which may be difficult (keep reading).
+
+Alternatively, compile it yourself (possibly easier for Windows users in Powershell or CMD) using your favorite compiler (For example, using g++: ```g++ Studybot.h Studybot.cpp Studybot_main.cpp Flashcard.h -o myStudybot.exe```).
+
+Now you can get your study on! My code should work on Windows, Mac, and Linux (if you run into problems, please submit a detailed issue report).
 
 ## Lore..?
 I originally wrote this program *very* poorly in Python a couple years ago. This year, I needed to study in a flashcard-like style, preferably without the writing. When I tried using my old studybot, the thing was an *absolute mess* of bugs and crashes. As a result, I chose to rewrite the program as professionally as possible to best avoid bugs. I chose to rewrite it in C++ to make things as explicit as possible so I can change things in the future.
