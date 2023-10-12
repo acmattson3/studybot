@@ -46,11 +46,11 @@ void Studybot::setMats(string filename) {
 	ifstream file(filename);
 	string line;
 	while (std::getline(file, line)) { // For every line in file
-		if (line.length() > MIN_Q_LEN && isSubstr(COMMENT, line)) {
+		if (line.length() > 1 && isSubstr(COMMENT, line)) {
 			int commentPos = line.find(COMMENT);
 			line = line.substr(0, commentPos);
 		}
-		if (line.length() > MIN_Q_LEN) { // Remove empty lines
+		if (line.length() > 1) { // Remove empty lines
 			while (isSubstr("\\n", line)) {
 				int newlinePos = line.find("\\n");
 				line = line.substr(0, newlinePos) + '\n' + line.substr(newlinePos+2, line.length());
