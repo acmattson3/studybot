@@ -6,7 +6,7 @@ This is a program that, given any text (.txt) file in its current directory (and
 As an example of how to use each mode, I use the decremental mode for studying, as the format is like that of flashcards. I use the incremental mode when learning new things, as the format is like that of most traditional academic classes (start with chapter one, then add chapter two, etc).
 
 # How To Use
-Place text files in the same directory as the program. Each line should be formatted with ' !! ' between the questions and their corresponding answers. Any text on a line following a '//' will be excluded from the line (works as a traditional C++ comment). Blank lines are skipped.
+Place text files in the same directory as the program. Each line should be formatted with ' !! ' between the questions and their corresponding answers. Any text on a line following a '//' will be excluded from the line (works as a traditional C++ comment). Blank lines are skipped. If '\n' is found in your string, it will be replaced with a newline character, allowing for questions and answers with multiple lines.
 
 ## Example:
 **Filename:** *example.txt*
@@ -19,6 +19,8 @@ What is the answer? !! This is the answer!
 // This is /// also a comment line!
 What is the meaning of life? 
 2 + 2 = ? !! 2 + 2 = 4 // This is also a comment!
+
+What is a\nnewline? !! This\nis a newline!
 ```
 **From this file, the following questions and answers will be loaded:**
 
@@ -27,6 +29,11 @@ What is the meaning of life?
 2. **Q.** What is the meaning of life? **A.** No answer provided.
 
 3. **Q.** 2 + 2 = ? **A.** 2 + 2 = 4
+
+4. **Q.** What is a
+newline? 
+**A.** This
+is a newline!
 
 **Note:** The comment character and Q/A delimiter (the thing separating the questions and answers on each line) are defined in Studybot.h if you wish to change them.
 
