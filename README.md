@@ -32,7 +32,8 @@ What is a\nnewline? !! This\nis a newline!
 
 4. **Q.** What is a
 
-newline? 
+newline?
+
 **A.** This
 
 is a newline!
