@@ -31,8 +31,10 @@ What is a\nnewline? !! This\nis a newline!
 3. **Q.** 2 + 2 = ? **A.** 2 + 2 = 4
 
 4. **Q.** What is a
+
 newline? 
 **A.** This
+
 is a newline!
 
 **Note:** The comment character and Q/A delimiter (the thing separating the questions and answers on each line) are defined in Studybot.h if you wish to change them.
