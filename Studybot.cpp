@@ -127,7 +127,7 @@ bool Studybot::studyDec() {
 	if (!_validMats) return false;
 
 	int prevIdx = -2;
-	int remQS = mats.size() - 1;
+	int remQS = mats.size();
 	string decision;
 	while (remQS >= 0) {
 		int randIdx = -1;
