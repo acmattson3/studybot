@@ -58,3 +58,6 @@ I originally wrote this program *very* poorly in Python a couple years ago. This
   * Useful for marking questions with typos to be fixed later, or for remembering which questions to write down/work on later.
 * Make a saving feature that saves remaining questions to be studied later.
   * Possible implementation: When the user enters "stop," ask them if they want to save. If they do, create a new txt file called "filename_save" where filename is the name of the text file being studied. For the decremental mode, enter the current remaining questions into this new txt file. When the save file is done being studied, the file is deleted.
+* Make intuitive GUIs
+  * Studying GUI with ability to click instead of using terminal
+  * Note-taking GUI to avoid semi-gross format of text file (wouldn't have to deal with delimeters or having to type '\n')
