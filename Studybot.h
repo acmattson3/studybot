@@ -43,13 +43,13 @@ static const int DELIM_LEN = 4;
 static const string DELIM = " !! "; // Separator between Q and A in txt files
 static const int COMMENT_LEN = 2;
 static const string COMMENT = "//"; // Indicator for a full-line comment
+static const int MIN_Q_LEN = 1; // The minimum length of a question (needs more than '\n')
+static const bool DEBUGGING = false; // Display debug messages
 
 #if ( defined(WIN32) || defined(_WIN32) || defined(__WIN32) ) && !defined(__CYGWIN__)
 static const char* CLEARCMD = "cls";
-static const char* WAITCMD = "pause"; // Not used.
 #else
 static const char* CLEARCMD = "clear";
-static const char* WAITCMD = "read -rsn1 -p \"Press any key to continue\" variable;echo"; // Not used.
 #endif
 
 
@@ -140,6 +140,11 @@ private:
 	//   filename must be the name of a valid txt file
 	// Strong Guarantee
 	void setMats(string filename);
+
+	// Sets all flashcards as unanswered.
+	// Preconditions: None
+	// No-Throw Guarantee
+	void resetMats();
 
 	// Returns a random number from min to max inclusively.
 	// Preconditions: 

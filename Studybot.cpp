@@ -9,6 +9,8 @@
 
 
 Studybot::Studybot() : choiceIdx(1) {
+	if (DEBUGGING) cout << "DBG: Default CTOR called" << endl;
+
 	int maxChoice = printFiles();
 	if (maxChoice >= 1) {
 		_validMats = true;
@@ -29,6 +31,8 @@ Studybot::Studybot() : choiceIdx(1) {
 }
 
 void Studybot::newChoice() {
+	if (DEBUGGING) cout << "DBG: newChoice() called" << endl;
+
 	if (!_hasMats) return;
 	clearScr();
 	int maxChoices = printFiles();
@@ -41,6 +45,8 @@ void Studybot::newChoice() {
 }
 
 void Studybot::setMats(string filename) {
+	if (DEBUGGING) cout << "DBG: setMats() called" << endl;
+
 	mats.clear();
 
 	ifstream file(filename);
@@ -78,9 +84,21 @@ void Studybot::setMats(string filename) {
 	}
 }
 
+void Studybot::resetMats() {
+	if (DEBUGGING) cout << "DBG: resetMats() called" << endl;
+
+	for (int i = 0; i < mats.size(); i++) {
+		mats[i].isAnswered = false;
+	}
+}
+
 bool Studybot::studyInc() {
+	if (DEBUGGING) cout << "DBG: studyInc() called" << endl;
+
 	if (!_hasMats) return false;
 	if (!_validMats) return false;
+
+	resetMats();
 
 	int prevIdx = -2;
 	int currQS = 1;
@@ -123,8 +141,12 @@ bool Studybot::studyInc() {
 }
 
 bool Studybot::studyDec() {
+	if (DEBUGGING) cout << "DBG: studyDec() called" << endl;
+
 	if (!_hasMats) return false;
 	if (!_validMats) return false;
+
+	resetMats();
 
 	int prevIdx = -2;
 	int remQS = mats.size();
@@ -158,11 +180,15 @@ bool Studybot::studyDec() {
 }
 
 int Studybot::randInRange(int min, int max) {
+	if (DEBUGGING) cout << "DBG: randInRange() called" << endl;
+
 	int range = max - min + 1;
 	return rand() % range + min;
 }
 
 string Studybot::dispQandA(int idx, int rem, bool isDec) {
+	if (DEBUGGING) cout << "DBG: dispQandA() called" << endl;
+
 	clearScr();
 	cout << "Remaining questions: " << rem << endl << endl;
 	cout << "Q. " << mats[idx].q << endl;
@@ -186,6 +212,8 @@ string Studybot::dispQandA(int idx, int rem, bool isDec) {
 }
 
 void Studybot::printAllQandA() {
+	if (DEBUGGING) cout << "DBG: printAllQandA() called" << endl;
+
 	if (!_validMats) return;
 
 	for (const Flashcard& elem : mats) {
@@ -194,6 +222,8 @@ void Studybot::printAllQandA() {
 }
 
 int Studybot::printFiles() {
+	if (DEBUGGING) cout << "DBG: printFiles() called" << endl;
+
 	int i = 0;
 	cout << "Text file(s) found in current directory: " << endl;
 	for (const auto& entry : dir_iter(fs::current_path())) {
@@ -207,6 +237,8 @@ int Studybot::printFiles() {
 }
 
 void Studybot::getChoice(int lower, int upper) {
+	if (DEBUGGING) cout << "DBG: getChoice() called" << endl;
+
 	int studyChoice;
 	cout << "Enter your choice (" << lower << '-' << upper << "): ";
 	studyChoice = getIntFromUser();
@@ -220,6 +252,7 @@ void Studybot::getChoice(int lower, int upper) {
 
 // Code by dark_shade, 2015, and Tin Svagelj, 2018.
 int Studybot::getIntFromUser() {
+	if (DEBUGGING) cout << "DBG: getIntFromUser() called" << endl;
 	std::stringstream ss;
 
 	ss.clear();
@@ -245,6 +278,7 @@ int Studybot::getIntFromUser() {
 }
 
 string Studybot::getFilename() {
+	if (DEBUGGING) cout << "DBG: getFilename() called" << endl;
 	int i = 0;
 	for (const auto& entry : dir_iter(fs::current_path())) {
 		if (entry.path().extension() == ".txt") {
@@ -257,24 +291,28 @@ string Studybot::getFilename() {
 	return "";
 }
 
-void Studybot::clearScr()
-{
+void Studybot::clearScr() {
+	if (DEBUGGING) {
+		cout << "DBG: clearScr() called; skipping." << endl;
+		return;
+	}
+
 	cout.flush();
 	system(CLEARCMD);
 }
 
-bool Studybot::validMats()
-{
+bool Studybot::validMats() {
+	if (DEBUGGING) cout << "DBG: validMats() called" << endl;
 	return _validMats;
 }
 
-bool Studybot::hasMats()
-{
+bool Studybot::hasMats() {
+	if (DEBUGGING) cout << "DBG: hasMats() called" << endl;
 	return _hasMats;
 }
 
-void Studybot::waitForKeypress()
-{
+void Studybot::waitForKeypress() {
+	if (DEBUGGING) cout << "DBG: waitForKeypress() called" << endl;
 	cout.flush();
 	//system(WAITCMD); // The old way to wait for user (system dependent)
 	cout << "Press enter to continue...";
@@ -284,6 +322,7 @@ void Studybot::waitForKeypress()
 }
 
 bool Studybot::isSubstr(const string& sub, const string& str) {
+	if (DEBUGGING) cout << "DBG: isSubstr() called" << endl;
 	if (str.find(sub) != string::npos) {
 		return true;
 	}
