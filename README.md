@@ -53,6 +53,9 @@ Now you can get your study on! My code should work on Windows, Mac, and Linux (i
 I originally wrote this program *very* poorly in Python a couple years ago. This year, I needed to study in a flashcard-like style, preferably without the writing. When I tried using my old studybot, the thing was an *absolute mess* of bugs and crashes. As a result, I chose to rewrite the program as professionally as possible to best avoid bugs. I chose to rewrite it in C++ to make things as explicit as possible so I can change things in the future.
 
 ## Future Goals
+* Add better notation for entering questions and answers with multiple lines
+  * For example, allow optional curly braces to contain multiple lines?
+  * This could be solved with a GUI, but something like curly braces may still need implementation in order to view the document in a GUI in a desirable format.
 * Make a question "marking" feature so that, as you study, you can mark questions
   * The questions would be displayed at the very end either when you finish all materials or stop studying. 
   * Useful for marking questions with typos to be fixed later, or for remembering which questions to write down/work on later.
