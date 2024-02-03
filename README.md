@@ -50,7 +50,7 @@ Alternatively, compile it yourself (possibly easier for Windows users in Powersh
 Now you can get your study on! My code should work on Windows, Mac, and Linux (if you run into problems, please submit a detailed issue report).
 
 ## Lore..?
-I originally wrote this program *very* poorly in Python a couple years ago. This year, I needed to study in a flashcard-like style, preferably without the writing. When I tried using my old studybot, the thing was an *absolute mess* of bugs and crashes. As a result, I chose to rewrite the program as professionally as possible to best avoid bugs. I chose to rewrite it in C++ to make things as explicit as possible so I can change things in the future.
+I originally wrote this program *very* poorly in Python a couple years ago. This year (2023), I needed to study in a flashcard-like style, preferably without the writing. When I tried using my old studybot, the thing was an *absolute mess* of bugs and crashes. As a result, I chose to rewrite the program as professionally as possible to best avoid bugs. I chose to rewrite it in C++ to make things as explicit as possible so I can change things in the future.
 
 ## Future Goals
 * Add better notation for entering questions and answers with multiple lines
