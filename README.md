@@ -41,7 +41,7 @@ is a newline!
 **Note:** The comment character and Q/A delimiter (the thing separating the questions and answers on each line) are defined in Studybot.h if you wish to change them.
 
 ## Compilation:
-The best way to compile studybot is using the included makefile. Simply run the "make" command in the terminal (assuming make is installed) and execute the resulting file (the prompt resulting from the make command will tell you the filename). For Windows users, this assumes you have make installed on your system, which may be difficult (keep reading).
+*The best way to compile studybot is using the included makefile.* **Simply run the "make" command in the terminal** (assuming make is installed) and execute the resulting file (the prompt resulting from the make command will tell you the filename). For Windows users, this assumes you have make installed on your system, which may be difficult (keep reading).
 
 I highly recommend using WSL if you are a Windows user!
 
