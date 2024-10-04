@@ -41,7 +41,7 @@ is a newline!
 **Note:** The comment character and Q/A delimiter (the thing separating the questions and answers on each line) are defined in Studybot.h if you wish to change them.
 
 ## Compilation:
-The best way to compile studybot is using the included makefile. Simply run the "make" command in the terminal (assuming make is installed) and execute the resulting file (the prompt resulting from the make command will tell you the filename). For Windows users, this assumes you have make installed on your system, which may be difficult (keep reading).
+*The best way to compile studybot is using the included makefile.* **Simply run the "make" command in the terminal** (assuming make is installed) and execute the resulting file (the prompt resulting from the make command will tell you the filename). For Windows users, this assumes you have make installed on your system, which may be difficult (keep reading).
 
 I highly recommend using WSL if you are a Windows user!
 
@@ -67,3 +67,4 @@ I originally wrote this program *very* poorly in Python a couple years ago. This
 * Make intuitive GUIs
   * Studying GUI with ability to click instead of using terminal
   * Note-taking GUI to avoid semi-gross format of text file (wouldn't have to deal with delimeters or having to type '\n')
+  * P.S. to myself: Using a game engine (like Godot) would allow for a smooth, animated GUI with realistic flashcard motions!
