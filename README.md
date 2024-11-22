@@ -67,4 +67,4 @@ I originally wrote this program *very* poorly in Python a couple years ago. This
 * Make intuitive GUIs
   * Studying GUI with ability to click instead of using terminal
   * Note-taking GUI to avoid semi-gross format of text file (wouldn't have to deal with delimeters or having to type '\n')
-  * P.S. to myself: Using a game engine (like Godot) would allow for a smooth, animated GUI with realistic flashcard motions!
+  * P.S. to myself: Using a game engine (like Godot via GDExtensions) would allow for a smooth, animated GUI with realistic flashcard motions!
